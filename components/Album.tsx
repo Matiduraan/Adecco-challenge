@@ -7,7 +7,7 @@ const Album = ({ photos }: { photos: [Photo] | [] }) => {
       <div className="container mx-auto flex flex-wrap">
         {photos.map((photo) => {
           return (
-            <div className="w-full sm:w-1/3">
+            <div className="w-full sm:w-1/3" key={`photo-${photo.id}`}>
               <Image
                 alt={photo.title}
                 src={photo.url}

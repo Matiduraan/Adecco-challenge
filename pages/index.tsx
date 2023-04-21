@@ -39,7 +39,7 @@ const Home = (props: IProps) => {
       <div className="flex flex-wrap min-h-[75vh]	items-center container mx-auto">
         {users.length > 0 &&
           users.map((user) => {
-            return <UserCard user={user} />;
+            return <UserCard user={user} key={`user-${user.id}`} />;
           })}
       </div>
     </SidebarLayout>

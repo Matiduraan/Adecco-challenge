@@ -55,7 +55,10 @@ const AlbumModal = ({ hideModal }: { hideModal: () => void }) => {
       >
         {userAlbum.map((album) => {
           return (
-            <AlbumCard onClick={() => selectAlbum(album?.id)}>
+            <AlbumCard
+              onClick={() => selectAlbum(album?.id)}
+              key={`album-${album?.id}`}
+            >
               <i className="fa-solid fa-arrow-right"></i>
               <h2>{album?.title}</h2>
             </AlbumCard>
