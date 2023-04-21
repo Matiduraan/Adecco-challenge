@@ -8,6 +8,12 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+body {
+  min-width: 100%;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -15,13 +21,13 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #445136;
+}
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+::-webkit-scrollbar {
+  width: 6px;
 }
