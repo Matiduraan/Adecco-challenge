@@ -51,7 +51,7 @@ const Login = () => {
   return (
     <Layout>
       <div className="flex flex-wrap min-h-screen	items-center bg-[#306496]">
-        <div className="w-full h-full sm:h-fit sm:w-8/12 mx-auto bg-white">
+        <div className="w-full h-full sm:h-fit sm:w-8/12 mx-auto sm:bg-white">
           <Card>
             <Title>Sign in</Title>
             <Subtitle>
@@ -63,10 +63,10 @@ const Login = () => {
                 <div className="mb-6">
                   <input
                     type="text"
-                    id="success"
+                    id="email"
                     {...register("email")}
                     className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Success input"
+                    placeholder="Email"
                   />
                   {errors.email && (
                     <p className="mt-2 text-sm text-red-600 dark:text-red-500">
