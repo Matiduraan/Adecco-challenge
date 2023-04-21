@@ -18,11 +18,7 @@ const MobileSheet = ({
   );
 
   return (
-    <Sheet
-      isOpen={isOpen}
-      onClose={() => dispatch(closeSidebar)}
-      // snapPoints={[600, 400, 100, 0]}
-    >
+    <Sheet isOpen={isOpen} onClose={() => dispatch(closeSidebar())}>
       <Sheet.Container>
         <Sheet.Header />
         <Sheet.Content style={{ touchAction: "pan-y" }}>
