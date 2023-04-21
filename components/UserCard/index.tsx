@@ -14,8 +14,6 @@ const UserCard = ({ user }: { user: User }) => {
     dispatch(openSidebar());
   };
 
-  useTransition;
-
   return (
     <button className="w-full sm:w-4/12" onClick={handleClick} type="button">
       <Card>

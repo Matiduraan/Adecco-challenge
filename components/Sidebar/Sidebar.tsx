@@ -14,24 +14,26 @@ const Sidebar = ({
     dispatch(closeSidebar());
   };
   return (
-    <aside
-      id="menu"
-      className={`w-[20rem] h-screen flex bg-gray-800 duration-700`}
-    >
-      <div className="w-full flex flex-col text-white px-5 py-4 space-y-4 items-center overflow-x-hidden overflow-y-scroll">
-        <button
-          type="button"
-          onClick={handleClose}
-          className="text-right text-4xl hover:text-red-400 self-end"
-        >
-          &times;
-        </button>
-        <SidebarContent
-          showAlbumModal={showAlbumModal}
-          showPostsModal={showPostsModal}
-        />
-      </div>
-    </aside>
+    <>
+      <aside
+        id="menu"
+        className={`w-[20rem] h-screen flex bg-gray-800 duration-700 z-50`}
+      >
+        <div className="w-full flex flex-col text-white px-5 py-4 space-y-4 items-center overflow-x-hidden overflow-y-scroll">
+          <button
+            type="button"
+            onClick={handleClose}
+            className="text-right text-4xl hover:text-red-400 self-end"
+          >
+            &times;
+          </button>
+          <SidebarContent
+            showAlbumModal={showAlbumModal}
+            showPostsModal={showPostsModal}
+          />
+        </div>
+      </aside>
+    </>
   );
 };
 

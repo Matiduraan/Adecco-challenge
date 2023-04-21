@@ -30,7 +30,7 @@ const AlbumModal = ({ hideModal }: { hideModal: () => void }) => {
   return (
     <>
       <div
-        className={`container w-full flex mb-5 bg-white ${
+        className={`container mx-auto w-full flex mb-5 bg-white ${
           selectedAlbum.length > 0 ? "justify-between" : "justify-end"
         }`}
       >
@@ -44,18 +44,6 @@ const AlbumModal = ({ hideModal }: { hideModal: () => void }) => {
         </button>
       </div>
       <ModalTitle>Album</ModalTitle>
-      {/* {selectedAlbum.length == 0 ? (
-        userAlbum.map((album) => {
-          return (
-            <AlbumCard onClick={() => selectAlbum(album?.id)}>
-              <i className="fa-solid fa-arrow-right"></i>
-              <h2>{album?.title}</h2>
-            </AlbumCard>
-          );
-        })
-      ) : (
-        <Album photos={selectedAlbum} />
-      )} */}
       <Transition
         show={selectedAlbum.length == 0}
         enter="transition-opacity duration-300"

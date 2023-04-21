@@ -4,7 +4,7 @@ import Image from "next/image";
 const Album = ({ photos }: { photos: [Photo] | [] }) => {
   return (
     <>
-      <div className="container flex flex-wrap">
+      <div className="container mx-auto flex flex-wrap">
         {photos.map((photo) => {
           return (
             <div className="w-full sm:w-1/3">

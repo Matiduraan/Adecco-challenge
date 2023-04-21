@@ -7,7 +7,7 @@ import { login } from "@/services/loginServices";
 import Cookies from "universal-cookie";
 import { useRouter } from "next/router";
 import { MainButton } from "@/components/adecco.styles";
-import Layout from "@/components/Layout";
+import Layout from "@/components/Layouts/Layout";
 
 type Inputs = {
   email: string;

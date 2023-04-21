@@ -5,17 +5,10 @@ import { useSelector, shallowEqual, useDispatch } from "react-redux";
 import { RootState } from "@/redux/store";
 import { setUsers } from "@/redux/slices/usersListSlice";
 import UserCard from "@/components/UserCard";
-import Sidebar from "@/components/Sidebar/Sidebar";
 import { useEffect } from "react";
-import { Transition } from "@headlessui/react";
-import AlbumModal from "@/components/modals/AlbumModal";
-import ReactModal from "react-modal";
-import { useModal } from "react-modal-hook";
-import PostsModal from "@/components/modals/PostsModal";
 import { Album, Post, User } from "@/types";
-import Layout from "@/components/Layout";
-import { useWindowSize } from "@/hooks/useWindowSize";
-import MobileSheet from "@/components/Sidebar/MobileSheet";
+import Layout from "@/components/Layouts/Layout";
+import SidebarLayout from "@/components/Layouts/SidebarLayout";
 
 interface IProps {
   data: [
@@ -34,58 +27,22 @@ interface IProps {
 const Home = (props: IProps) => {
   const { data } = props;
   const dispatch = useDispatch();
-  const isOpen = useSelector(
-    (state: RootState) => state.sidebarOpen,
-    shallowEqual
-  );
-  const users = useSelector((state: RootState) => state.users, shallowEqual);
-  const windowSize = useWindowSize();
-  const [showAlbumModal, hideAlbumModal] = useModal(() => (
-    <ReactModal isOpen>
-      <AlbumModal hideModal={hideAlbumModal} />
-    </ReactModal>
-  ));
 
-  const [showPostsModal, hidePostsModal] = useModal(() => (
-    <ReactModal isOpen>
-      <PostsModal hideModal={hidePostsModal} />
-    </ReactModal>
-  ));
+  const users = useSelector((state: RootState) => state.users, shallowEqual);
 
   useEffect(() => {
     dispatch(setUsers(data));
   }, []);
 
   return (
-    <Layout>
-      <div className="flex flex-wrap min-h-screen	items-center container mx-auto">
+    <SidebarLayout>
+      <div className="flex flex-wrap min-h-[75vh]	items-center container mx-auto">
         {users.length > 0 &&
           users.map((user) => {
             return <UserCard user={user} />;
           })}
       </div>
-      {windowSize.width < 640 ? (
-        <MobileSheet
-          showAlbumModal={showAlbumModal}
-          showPostsModal={showPostsModal}
-        />
-      ) : (
-        <Transition
-          show={isOpen}
-          enter="transition duration-500 ease-in-out"
-          enterFrom="top-0 right-0 absolute translate-x-[200rem]"
-          enterTo="top-0 right-0 absolute"
-          leave="transition duration-500 ease-in-out"
-          leaveFrom="top-0 right-0 absolute translate-x-0"
-          leaveTo="top-0 right-0 absolute translate-x-[200rem]"
-        >
-          <Sidebar
-            showAlbumModal={showAlbumModal}
-            showPostsModal={showPostsModal}
-          />
-        </Transition>
-      )}
-    </Layout>
+    </SidebarLayout>
   );
 };
 
