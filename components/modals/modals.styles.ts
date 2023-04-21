@@ -36,7 +36,6 @@ export const ModalTitle = styled.h1`
 
 export const AlbumCard = styled.button`
   display: flex;
-  // flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;

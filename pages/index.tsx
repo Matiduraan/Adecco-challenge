@@ -68,11 +68,11 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
       })
     );
     return {
-      props: { data: finalUsers }, // will be passed to the page component as props
+      props: { data: finalUsers },
     };
   }
   return {
-    props: { data: [] }, // will be passed to the page component as props
+    props: { data: [] },
   };
 };
 
