@@ -3,13 +3,13 @@
 ## Decisiones:
 
 ### Estructura
-Se utilizó mayormente Tailwind para facilitar la creación de la estructura de la web, como por ejemplo el encolumnado de los usuarios, o de las imágenes de cada álbum.
+Para facilitar la creación de la estructura de la web, se utilizó principalmente Tailwind CSS. Esto permitió lograr un encolumnado adecuado para los usuarios y las imágenes de los álbumes, entre otras cosas.
 
 ### Redux
-Se utiliza Redux para guardar la lista de usuarios, como también la lista de posts y de álbumes. Además, también se guarda un booleano indicando si el sidebar se encuentra abierto o no, y por último, se guarda un `selectedUser` para indicar el usuario que se encuentra activo dentro del sidebar.
+Para manejar el estado de la aplicación se optó por utilizar Redux. Se guardó la lista de usuarios, la lista de posts y de álbumes, un booleano indicando si el sidebar se encuentra abierto o no, y un selectedUser para indicar el usuario que se encuentra activo dentro del sidebar.
 
 ### React-Modal
-Se decidió mostrar tanto los posts como los álbumes en modal box ya que se consideró que era la mejor manera de mostrarlo teniendo en cuenta la experiencia de usuario.
+Para la visualización de los posts y álbumes se decidió utilizar modal boxes con la finalidad de mejorar la experiencia de usuario.
 
 ### React form
-Todos los formularios se encuentran validados con React Hook Form y Yup para corroborar que la información está completa en todos los casos.
+Para la validación de los formularios se utilizó la librería React Hook Form en conjunto con Yup para asegurarse de que la información se encuentra completa en todos los casos.
