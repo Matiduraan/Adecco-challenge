@@ -3,7 +3,6 @@ import { Card, UserName } from "./usercard.styles";
 import { setActiveUser } from "@/redux/slices/userSlice";
 import { useDispatch } from "react-redux";
 import { openSidebar } from "@/redux/slices/sidebarSlice";
-import { useTransition } from "react";
 import { User } from "@/types";
 
 const UserCard = ({ user }: { user: User }) => {

@@ -1,5 +1,4 @@
 import { MainButton } from "../adecco.styles";
-import { Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -32,10 +31,6 @@ const SidebarContent = ({
   const dispatch = useDispatch();
   const selectedUser = useSelector(
     (state: RootState) => state.selectedUser,
-    shallowEqual
-  );
-  const isOpen = useSelector(
-    (state: RootState) => state.sidebarOpen,
     shallowEqual
   );
 

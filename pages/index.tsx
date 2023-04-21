@@ -7,7 +7,6 @@ import { setUsers } from "@/redux/slices/usersListSlice";
 import UserCard from "@/components/UserCard";
 import { useEffect } from "react";
 import { Album, Post, User } from "@/types";
-import Layout from "@/components/Layouts/Layout";
 import SidebarLayout from "@/components/Layouts/SidebarLayout";
 
 interface IProps {
